@@ -1,7 +1,7 @@
 void setup(){ 
   
 size(800,500, P3D);
-  background(50,70,335); }
+  background(40,70,335); }
   
   
   
