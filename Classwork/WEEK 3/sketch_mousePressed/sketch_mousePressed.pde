@@ -12,7 +12,7 @@ void draw(){
   fill(255, 30); //shows how to make the trail fade 
   rect(0,0,width,height);//shows how to make the trail fade
   
- if(mousePressed){ //any key on keyboard no just the mouse
+ if(mousePressed){ //mouse key
  fill(0,255, 100);
  ellipse(mouseX,mouseY, brushSize, brushSize);
  }
