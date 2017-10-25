@@ -16,12 +16,10 @@ boolean buttonClicked1;
 boolean buttonClicked2;
 float dist;
 
-int value = 0;
-
 color[] picker = {#FF0000, #FF8100, #FFD915, #30EB13, #0B2C79, #4C0679, #FFFFFF, #000000};
 color currentColor = #000000;
 int brushSize = 10;
-
+int value = 1;
 
 
 
@@ -87,6 +85,11 @@ void draw(){
     //GIRLS NAMES
     fill(25);
     text("Jena", 69, 610);//girl one
+    if (value == 1) {
+    value = 255;
+  } else {
+    value = 1;
+  }
     text("Toni", 309, 610);//girl two
     text("Layla", 546, 610);//girl three
     text("Chloe", 789, 610);//girl four
@@ -101,6 +104,54 @@ void draw(){
   }
     fill(255, 0, 0);
     ellipse(c, d, size, size);
+    
+    
+    
+    //clear the current drawing
+  if((mouseX > 450) && (mouseY > 450)){
+   background(255); 
+  }
+  
+  //change color to red
+  if((mouseX < 50) && (mouseY > 450)){
+   currentColor = picker[0]; 
+  }
+  
+  //change color to orange
+  if((mouseX > 50) && (mouseX < 100) && (mouseY > 450)){
+   currentColor = picker[1]; 
+  }
+  
+  //change color to yellow
+  if((mouseX > 100) && (mouseX < 150) && (mouseY > 450)){
+   currentColor = picker[2]; 
+  }
+ 
+  //change color to green
+  if((mouseX > 150) && (mouseX < 200) && (mouseY > 450)){
+   currentColor = picker[3]; 
+  }
+  
+   //change color to blue
+  if((mouseX > 200) && (mouseX < 250) && (mouseY > 450)){
+   currentColor = picker[4]; 
+  } 
+  
+   //change color to purple
+  if((mouseX > 250) && (mouseX < 300) && (mouseY > 450)){
+   currentColor = picker[5]; 
+  } 
+  
+  //change color to white
+  if((mouseX > 300) && (mouseX < 350) && (mouseY > 450)){
+   currentColor = picker[6]; 
+  } 
+  
+   //change color to black
+  if((mouseX > 350) && (mouseX < 400) && (mouseY > 450)){
+   currentColor = picker[7]; 
+  } 
+  
   
   
   }
@@ -131,13 +182,61 @@ float calcDistance(int xPos, int yPos){
  
 //}
 
-void mouseClicked(){
- if (value == 0) {
-   value = 255;
- } else {
-   value = 0;
- }
+//void mouseClicked(){
+// if (value == 0) {
+//   value = 255;
+// } else {
+//   value = 0;
+// }
   
+//}
+
+void keyPressed() {
+  
+  if (value == 1) {
+    value = 255;
+  } else {
+    value = 1;
+    background(255);
+  }
+  
+  if (value == 2) {
+    value = 255;
+  } else {
+    value = 2;
+    background(255);
+  }
+  
+  if (value == 3) {
+    value = 255;
+  } else {
+    value = 3;
+    background(255);
+  }
+  
+  if (value == 4) {
+    value = 255;
+  } else {
+    value = 4;
+    background(255);
+  }
+
+
+
+
+
+ 
+  if(key == CODED){
+    if(keyCode == UP){
+      if(brushSize + 10 < 100){
+     brushSize += 10; 
+      }
+    }
+  }
+    
+    
+    
+ 
 }
 
 
